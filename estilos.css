@@ -1,99 +1,21 @@
-/* ====== RESET BÁSICO ====== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ====== ESTILO GENERAL ====== */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 10px;
-}
-
-/* ====== HEADER ====== */
-header {
-    background: linear-gradient(90deg, #333, #555);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-}
-
-/* ====== TITULOS GENERALES ====== */
-.titulo {
-    text-align: center;
-    color: #222;
-    margin: 20px 0 10px 0;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}
-
-/* ====== CONTENIDO Y TEXTOS ====== */
-.contenido {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 15px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-}
-
-.texto {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    text-align: justify;
-}
-
-#especial {
-    color: #0066cc;
-    font-weight: bold;
-    background-color: #eef6ff;
-    padding: 10px;
-    border-left: 4px solid #0066cc;
-    border-radius: 5px;
-}
-
-/* ====== SECCIÓN DE AUTOS (IMAGEN PRINCIPAL) ====== */
-.contenedor {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.contenedor img {
-    max-width: 350px;   /* auto de arriba libre */
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-}
-
-.descripcion {
-    margin-top: 10px;
-    font-style: italic;
-    color: #444;
-}
-
-/* ====== GALERÍA DE IMÁGENES (3 de abajo con mismo tamaño) ====== */
+/* ====== GALERÍA DE IMÁGENES (3 de abajo iguales y alineados) ====== */
 .contenedor-float {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
     gap: 15px;
-    flex-wrap: wrap;
     margin: 20px 0;
+    justify-items: center; /* centra cada imagen en su celda */
 }
 
 .contenedor-float img {
-    width: 250px;       /* mismo ancho */
+    width: 100%;
+    max-width: 250px;   /* mismo ancho */
     height: 180px;      /* misma altura */
     object-fit: cover;  /* recorta sin deformar */
     border-radius: 10px;
+    border: 3px solid #ccc; /* marco alrededor */
+    background: #fff;       /* fondo blanco */
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -101,11 +23,4 @@ header h1 {
 .contenedor-float img:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-}
-
-/* ====== HR PERSONALIZADO ====== */
-hr {
-    border: none;
-    border-top: 2px solid #ccc;
-    margin: 30px 0;
 }
